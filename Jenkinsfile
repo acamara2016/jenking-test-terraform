@@ -1,6 +1,8 @@
 pipeline {
     agent any
-
+    tools {
+        git 'GIT'
+    }
     stages {
         stage('Hello') {
             steps {
