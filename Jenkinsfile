@@ -11,29 +11,18 @@ pipeline {
         }
         stage('Terraform Init') {
             steps {
-                script {
-                    echo 'terraform init'
-                }
+                echo 'terraform init'
             }
         }
         stage('Terraform Plan') {
             steps {
-                script {
-                    echo 'terraform init'
-                }
+                echo 'terraform plan'
             }
         }
         stage('Terraform Apply') {
             steps {
-                script {
-                    echo 'terraform apply -auto-approve tfplan'
-                }
+                echo 'terraform apply -auto-approve tfplan'
             }
-        }
-    }
-    post {
-        always {
-            cleanWs()
         }
     }
 }  
