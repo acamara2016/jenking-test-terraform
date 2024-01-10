@@ -8,7 +8,7 @@ pipeline {
         AWS_DEFAULT_REGION = 'us-east-1'
     }
     stages {
-        stage('Testing parameters') {
+        stage('Parameters') {
             steps {
                 script {
                     sh "echo deploying topaz-data-refresh for environment: ${environment} and image_tag: ${image_tag}"
