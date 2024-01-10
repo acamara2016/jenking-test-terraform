@@ -1,5 +1,9 @@
 pipeline {
     agent any
+    tools {
+      terraform 'terraform'
+      git 'Default'
+    }
     environment {
         AWS_DEFAULT_REGION = 'us-east-1'
     }
