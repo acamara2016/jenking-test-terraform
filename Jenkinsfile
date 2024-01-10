@@ -8,6 +8,13 @@ pipeline {
         AWS_DEFAULT_REGION = 'us-east-1'
     }
     stages {
+        stage('cd into topaz-data-refresh') {
+            steps {
+                script {
+                    sh "cd topaz-data-refresh-service"
+                }
+            }
+        }
         stage('Parameters') {
             steps {
                 script {
