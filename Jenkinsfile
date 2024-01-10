@@ -25,7 +25,7 @@ pipeline {
         stage('Terraform Apply') {
             steps {
                 script {
-                    echo 'terraform apply -auto-approve tfplan'
+                    sh 'terraform apply -auto-approve tfplan'
                 }
             }
         }
