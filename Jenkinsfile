@@ -8,6 +8,13 @@ pipeline {
         AWS_DEFAULT_REGION = 'us-east-1'
     }
     stages {
+        stage('Testing parameters') {
+            steps {
+                script {
+                    sh "echo ${branch_name}"
+                }
+            }
+        }
         stage('Terraform Init') {
             steps {
                 script {
