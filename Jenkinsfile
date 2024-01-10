@@ -10,23 +10,7 @@ pipeline {
     stages {
         stage('Terraform Init') {
             steps {
-                script {
-                    sh 'terraform init'
-                }
-            }
-        }
-        stage('Terraform Plan') {
-            steps {
-                script {
-                   sh 'terraform plan'
-                }
-            }
-        }
-        stage('Terraform Apply') {
-            steps {
-                script {
-                    'terraform apply -auto-approve tfplan'
-                }
+                sh label: '', script: 'terraform --help'
             }
         }
     }
