@@ -8,17 +8,10 @@ pipeline {
         AWS_DEFAULT_REGION = 'us-east-1'
     }
     stages {
-        stage('Storing parameters for terraform') {
-            steps {
-                script {
-                    sh "export TF_VAR_branch_name=${branch_name}; export TF_VAR_image_tag=${image_tag}"
-                }
-            }
-        }
         stage('Testing parameters') {
             steps {
                 script {
-                    sh "echo ${branch_name} ${image_tag}"
+                    sh "echo ${environment} ${image_tag}"
                 }
             }
         }
@@ -32,14 +25,14 @@ pipeline {
         stage('Terraform Plan') {
             steps {
                 script {
-                   sh "terraform plan -var='branch_name=${branch_name}' -var='image_tag=${image_tag}'"
+                   sh "terraform plan -var='environment=${environment}' -var='image_tag=${image_tag}'"
                 }
             }
         }
         stage('Terraform Apply') {
             steps {
                 script {
-                    sh "terraform apply -auto-approve -var='branch_name=${branch_name}' -var='image_tag=${image_tag}'"
+                    sh "terraform apply -auto-approve -var='environment=${environment}' -var='image_tag=${image_tag}'"
                 }
             }
         }
