@@ -10,7 +10,7 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                echo 'checkout branch'
+                'checkout main'
             }
         }
         stage('Terraform Init') {
@@ -23,7 +23,7 @@ pipeline {
         stage('Terraform Plan') {
             steps {
                 script {
-                    echo 'terraform init'
+                    'terraform plan'
                 }
             }
         }
