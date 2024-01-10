@@ -8,6 +8,13 @@ pipeline {
         AWS_DEFAULT_REGION = 'us-east-1'
     }
     stages {
+        stage('Storing parameters for terraform') {
+            steps {
+                script {
+                    sh "export TF_VAR_branch_name=${branch_name}; export TF_VAR_image_tag=${image_tag}"
+                }
+            }
+        }
         stage('Testing parameters') {
             steps {
                 script {
