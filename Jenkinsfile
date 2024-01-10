@@ -11,7 +11,7 @@ pipeline {
         stage('Testing parameters') {
             steps {
                 script {
-                    sh "echo ${environment} ${image_tag}"
+                    sh "echo deploying topaz-data-refresh for environment: ${environment} and image_tag: ${image_tag}"
                 }
             }
         }
