@@ -11,14 +11,14 @@ pipeline {
         stage('Terraform Init') {
             steps {
                 script {
-                    'terraform init'
+                    sh 'terraform init'
                 }
             }
         }
         stage('Terraform Plan') {
             steps {
                 script {
-                    'terraform plan'
+                   sh 'terraform plan'
                 }
             }
         }
