@@ -16,7 +16,7 @@ pipeline {
         stage('Terraform Init') {
             steps {
                 script {
-                    echo 'terraform init'
+                    'terraform init'
                 }
             }
         }
