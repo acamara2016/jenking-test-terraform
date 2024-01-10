@@ -11,7 +11,7 @@ pipeline {
         stage('Testing parameters') {
             steps {
                 script {
-                    sh "echo ${branch_name}"
+                    sh "echo ${branch_name} ${image_tag}"
                 }
             }
         }
