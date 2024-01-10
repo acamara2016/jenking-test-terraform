@@ -4,11 +4,6 @@ pipeline {
         AWS_DEFAULT_REGION = 'us-east-1'
     }
     stages {
-        stage('Checkout Code') {
-            steps {
-                sh label: '', script: 'checkout main'
-            }
-        }
         stage('Terraform Init') {
             steps {
                 script {
