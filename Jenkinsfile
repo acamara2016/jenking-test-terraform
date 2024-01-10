@@ -32,14 +32,14 @@ pipeline {
         stage('Terraform Plan') {
             steps {
                 script {
-                   sh 'terraform plan'
+                   sh "terraform plan -var='branch_name=${branch_name}' -var='image_tag=${image_tag}'"
                 }
             }
         }
         stage('Terraform Apply') {
             steps {
                 script {
-                    sh 'terraform apply -auto-approve'
+                    sh "terraform apply -auto-approve -var='branch_name=${branch_name}' -var='image_tag=${image_tag}'"
                 }
             }
         }
