@@ -6,7 +6,6 @@ pipeline {
     }
     environment {
         AWS_DEFAULT_REGION = 'us-east-1'
-        TERRAFORM_STATE_FILE = "terraform.tfstate"
     }
     stages {
         stage('cd into topaz-data-refresh') {
@@ -26,7 +25,7 @@ pipeline {
         stage('Terraform Init') {
             steps {
                 script {
-                    sh "terraform init -backend-config=${TERRAFORM_STATE_FILE}"
+                    sh "terraform init"
                 }
             }
         }
