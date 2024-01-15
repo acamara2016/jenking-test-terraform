@@ -6,7 +6,7 @@ pipeline {
     }
     environment {
         AWS_DEFAULT_REGION = 'us-east-1'
-        TERRAFORM_STATE_FILE = "${WORKSPACE}/terraform.tfstate
+        TERRAFORM_STATE_FILE = "${WORKSPACE}/topaz-data-refresh/terraform.tfstate"
     }
     stages {
         stage('cd into topaz-data-refresh') {
